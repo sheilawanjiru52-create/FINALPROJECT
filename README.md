@@ -1,114 +1,84 @@
-# FINALPROJECT
+# NutriTrack App
 
-# Project Proposal
+## Introduction
 
-# K-Nutrition app
+Nutrition plays an important role in maintaining good health and preventing diet-related diseases. However, many people struggle to understand their nutritional intake, identify nutritional deficiencies and make informed food choices.
 
-## **Nutrition and Dietary Health Recommendation System - Kenya**
+This project aims to develop NutriTrack, a machine learning-based nutritional tracking and food recommendation system. The system uses a nutritional database containing different food items and their nutrient compositions. Machine learning techniques, particularly K-Means clustering, are applied to group foods according to their nutritional characteristics.
 
-## 1. Introduction and Problem Statement
+The application allows users to record their daily food consumption, monitor their nutrient intake over time and receive personalized food recommendations based on their nutritional goals. It also incorporates time-based analysis to identify nutritional patterns and changes in eating habits.
 
-Nutrition plays an important role in maintaining good health and reducing the risk of diet-related conditions such as type 2 diabetes, hypertension, obesity, and certain nutritional deficiencies. However, many people struggle to monitor their daily nutrient intake, identify nutritional gaps, and understand how their dietary habits may influence their long-term health.
+## Problem Statement
 
-Although food-tracking applications are available, many focus primarily on calorie counting and may not adequately incorporate locally consumed foods, individual nutritional requirements, historical dietary patterns, or personalized recommendations.
+Many individuals lack an effective way of monitoring their daily nutritional intake and understanding whether their diets meet their nutritional requirements.
 
-This project proposes the development of a machine-learning-based nutrition application that uses Kenyan food composition data to calculate nutritional intake, identify dietary patterns, forecast future nutrient consumption, and recommend foods that support healthier dietary choices. The system will also assess selected diet-related risk factors using appropriate nutritional guidelines and, where suitable data are available, machine-learning models.
+Existing food-tracking approaches may provide basic calorie information but often offer limited personalized recommendations, nutritional pattern analysis and insights into the overall quality of an individual's diet.
 
-The application will be developed using Python and Streamlit, with machine-learning techniques including K-Means clustering, Long Short-Term Memory (LSTM) networks, and a content-based recommendation system.
+Additionally, identifying foods that can help individuals meet specific nutritional goals can be challenging, particularly when dealing with large nutritional databases.
 
-## 2. Main Aim
+There is therefore a need for an intelligent nutritional tracking system that integrates nutritional data analysis, machine learning and time-based tracking to help users understand their eating habits and make more informed food choices.
 
-To develop an advanced machine-learning-based nutrition application that analyzes dietary intake, identifies dietary patterns, forecasts future nutrient consumption, and provides personalized food recommendations to support healthier eating habits and reduce selected diet-related health risks.
+## Main Aim
+To develop a machine learning-based nutritional tracking and food recommendation system that enables users to monitor their dietary intake, identify nutritional patterns and receive personalized food recommendations based on their nutritional goals.
 
-## 3. Specific Objectives
+### Specific Objectives
 
-1. To develop a nutritional database of Kenyan foods using the Kenya Food Composition Tables and other reliable nutritional sources.
-2. To develop a system that calculates users' daily calorie and nutrient intake based on the foods and quantities consumed.
-3. To apply K-Means clustering to identify patterns in users' dietary intake.
-4. To develop an LSTM time-series model to forecast future calorie and nutrient consumption using historical dietary records.
-5. To develop a personalized food recommendation system that suggests foods based on identified nutritional gaps and individual dietary requirements.
-6. To incorporate a health assessment component that evaluates selected diet-related risk factors using established nutritional guidelines and appropriate health data.
-7. To evaluate the performance of the machine-learning models and integrate the components into an interactive Streamlit application.
+1. To develop a nutritional database: Collect, clean and organize food composition data containing different foods and their nutritional values to establish a reliable nutritional database.
 
-## 4. Research Questions
+2. To apply machine learning techniques for food clustering: Implement K-Means clustering to group foods according to their nutritional characteristics and identify similarities between different food items.
 
-1. How can Kenyan food composition data be used to estimate the calorie and nutrient intake of individuals?
-2. Can K-Means clustering identify meaningful dietary patterns based on users' nutritional intake?
-3. How accurately can an LSTM model forecast future calorie and nutrient consumption from historical dietary records?
-4. How can a content-based recommendation system provide personalized food recommendations based on identified nutritional gaps?
-5. How can dietary intake and relevant personal characteristics be incorporated into an assessment of selected diet-related health risk factors?
+3. To develop a nutritional tracking system: Create an application that allows users to record their daily food consumption and monitor their intake of calories, macronutrients and other available nutrients.
 
-## 5. Methodology
+4. To develop a machine learning-based food recommendation system: Recommend suitable foods based on users' nutritional goals, using nutritional characteristics and the identified food clusters.
 
-### 5.1 Research Design
+5. To implement time-based nutritional analysis: Analyse users' food consumption history over different periods to identify nutritional trends, recurring eating patterns and changes in nutrient intake.
 
-The project will adopt an applied machine-learning and software-development approach. Publicly available food composition and health datasets will be used to develop and evaluate the analytical components, which will subsequently be integrated into an interactive application.
+6. To evaluate the performance of the developed system: Assess the effectiveness of the clustering techniques and the functionality of the nutritional tracking and recommendation system.
 
-### 5.2 Data Collection
+## Methodology
 
-The primary nutritional data source will be the **Kenya Food Composition Tables 2018**, published by the Government of Kenya with support from FAO. The tables provide nutritional information for Kenyan foods and recipes.
+### Stage 1: Data Collection and Preparation
 
-Additional datasets will be sought for historical dietary intake and relevant health outcomes. Potential sources include national nutrition and health surveys, demographic and health surveys, and publicly available research datasets. The suitability of each dataset will depend on the availability of the required variables, repeated dietary observations, and appropriate outcome labels.
+Obtain food composition data containing nutritional information such as energy, protein, carbohydrates, fats, fibre, vitamins and minerals. Clean the dataset, handle missing values, distinguish trace values and prepare the data for analysis.
 
-### 5.3 Data Preprocessing
+### Stage 2: Exploratory Data Analysis and Machine Learning
 
-The collected data will be cleaned to address missing values, inconsistent units, duplicate records, and invalid entries. Nutrient measurements will be standardized, categorical variables encoded, and numerical features scaled where necessary. Historical dietary records will be organized chronologically for time-series analysis.
+Explore the nutritional dataset through statistical analysis and visualizations. Apply feature scaling and K-Means clustering to group foods according to their nutrient composition. Evaluate clustering performance using metrics such as Silhouette Score, Davies-Bouldin Index and Calinski-Harabasz Index.
 
-### 5.4 Nutritional Analysis
+### Stage 3: Application Development
 
-Users will enter their personal characteristics, such as age, sex, height, weight, activity level, and relevant health conditions, together with the foods and quantities consumed.
+Develop an interactive web application using Python and Streamlit. Implement user registration, login, food tracking, nutritional summaries and a SQLite database to store individual users' food consumption records.
 
-The application will calculate BMI, estimate daily energy requirements using established equations, and calculate the total calories and nutrients consumed using food composition values adjusted for the quantity entered.
+### Stage 4: Food Recommendation System
 
-Daily intake will be compared against appropriate age- and sex-specific nutritional reference values. The system will identify potential nutrient inadequacies and excessive intake without presenting these findings as medical diagnoses.
+Integrate the machine learning clustering results into the application. Develop a recommendation mechanism that suggests foods based on nutritional goals such as higher protein, higher fibre, lower energy or a specific nutrient selected by the user.
 
-### 5.5 Machine-Learning Development
+### Stage 5: Time-Based Nutritional Analysis
 
-**A. Dietary pattern identification — K-Means clustering**
+Analyse stored food consumption records over time. Generate daily, two-day and weekly nutritional summaries, visualize nutrient trends and identify recurring dietary patterns. Use these insights to help users understand their eating habits.
 
-K-Means will group dietary records according to similarities in calorie intake, macronutrients, fibre, and selected micronutrients. The resulting clusters will be interpreted to identify patterns such as high-calorie intake, low-fibre intake, or relatively balanced diets. The number of clusters will be selected using methods such as the elbow method and silhouette score.
+### Stage 6: Testing and Evaluation
 
-**B. Nutrient forecasting — LSTM**
+Test the application to ensure that user records are stored correctly, nutritional calculations are accurate, recommendations are relevant and clustering results are reliable. Evaluate the overall functionality and performance of the system.
 
-An LSTM neural network will be developed to analyze sequential dietary records and forecast future calorie and nutrient intake. The model will use historical daily intake as input and predict selected nutritional variables over a defined future period. Its performance will be evaluated using mean absolute error (MAE) and root mean squared error (RMSE).
+## Data Source
 
-This component will require sufficiently long, sequential dietary records. If suitable longitudinal data cannot be obtained, the forecasting component will be treated as a prototype or evaluated using appropriately collected and documented dietary records.
+Source: Food and Agriculture Organization of the United Nations (FAO)
 
-**C. Personalized food recommendations — Content-based filtering**
+Contains: Kenya Food Composition Tables (2018)
 
-A content-based recommendation system will match foods to users' identified nutritional gaps using nutrient composition, dietary preferences, and relevant restrictions. For example, it may recommend iron-rich or fibre-rich foods when the user's recorded intake is below the relevant reference level. Recommendations will be tailored to locally available Kenyan foods.
+## Expected Outcome
 
-**D. Diet-related health assessment**
+The expected outcome is that the app:
 
-The system will assess selected dietary risk factors, such as excessive sodium intake, high saturated-fat intake, or inadequate fibre intake, using established guidelines. If a suitable labelled dataset is available, a supervised classification model may be developed to investigate associations between dietary characteristics and selected health outcomes. Such predictions will be presented as estimates, not diagnoses, and will not imply that diet alone determines disease risk.
+- Provides a structured nutritional database.
+  
+- Groups foods according to their nutritional similarities using machine learning.
 
-### 5.6 Model Evaluation
+-  Allows users to monitor their daily nutritional intake.
 
-K-Means clustering will be evaluated using the silhouette score and cluster interpretability. LSTM forecasting performance will be assessed using MAE and RMSE against held-out chronological observations. The recommendation system will be evaluated using suitable ranking or relevance measures and, where feasible, expert review. Any supervised health-outcome model will be evaluated using appropriate metrics such as precision, recall, F1-score, ROC-AUC, and validation on held-out data.
+-  Provides personalized food recommendations based on nutritional goals.
 
-### 5.7 Application Development
+-  Tracks nutritional intake over time and identifies eating patterns.
 
-The final application will be built using Streamlit and Python libraries, including Pandas, NumPy, Scikit-learn, and TensorFlow/Keras. It will allow users to record foods and quantities, view daily nutritional summaries, review dietary patterns, see nutrient forecasts, and receive personalized food recommendations.
-
-## 6. Summarized Methodology
-
-1. **Data collection:** Obtain Kenyan food composition data and suitable dietary or health datasets.
-2. **Preprocessing:** Clean, standardize, and prepare the data for analysis.
-3. **Nutritional calculations:** Estimate calories, nutrient intake, BMI, and individualized reference requirements.
-4. **Clustering:** Apply K-Means to identify dietary patterns.
-5. **Time-series forecasting:** Train an LSTM model to forecast future nutrient intake.
-6. **Recommendation system:** Use content-based filtering to suggest foods that address identified nutritional gaps.
-7. **Health assessment:** Evaluate selected dietary risk factors using established guidelines and, where data permit, a supervised model.
-8. **Evaluation and deployment:** Evaluate each component and integrate the system into a Streamlit application.
-
-## 7. Expected Outcomes
-
-The project is expected to produce:
-
-* An interactive nutrition application featuring Kenyan foods.
-* Automated calorie and nutrient calculations based on user-entered quantities.
-* Clusters representing distinct dietary patterns.
-* Forecasts of future calorie and nutrient intake, subject to data availability.
-* Personalized food recommendations based on nutritional gaps.
-* A dietary health assessment feature that communicates potential risk factors responsibly.
-* An evaluation of the performance and limitations of the implemented machine-learning techniques.
+-  Helps users make more informed nutritional decisions.
