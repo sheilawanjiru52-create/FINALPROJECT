@@ -82,3 +82,7 @@ The expected outcome is that the app:
 -  Tracks nutritional intake over time and identifies eating patterns.
 
 -  Helps users make more informed nutritional decisions.
+
+## App
+
+[NutriTrack](https://finalproject-bay69tqwbkafrfmcqxg9gw.streamlit.app/)
